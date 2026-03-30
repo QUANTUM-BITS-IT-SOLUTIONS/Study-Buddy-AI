@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* RAG Tutor Design System - Dark Premium Theme */
+/* All colors MUST be HSL */
+
+@layer base {
+  :root {
+    /* Primary dark theme */
+    --background: 222 47% 11%;
+    --foreground: 220 13% 91%;
+
+    --card: 222 47% 5%;
+    --card-foreground: 220 13% 91%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 220 13% 91%;
+
+    --primary: 199 89% 60%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 220 13% 91%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 199 89% 60%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 199 89% 60%;
+
+    --radius: 1rem;
+
+    /* File type colors */
+    --file-pdf: 0 84% 60%;
+    --file-doc: 210 100% 56%;
+    --file-success: 142 71% 45%;
+
+    /* Custom tokens for glassmorphism */
+    --glass-bg: 222 47% 8%;
+    --glass-border: 217 33% 25%;
+    --glow: 199 89% 60%;
+
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 220 13% 91%;
+    --sidebar-primary: 199 89% 60%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 220 13% 91%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-ring: 199 89% 60%;
+  }
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 199 89% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 199 89% 48%;
+
+    --glass-bg: 0 0% 98%;
+    --glass-border: 214 32% 85%;
+    --glow: 199 89% 48%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 199 89% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 199 89% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50;
+  }
+
+  .glass-strong {
+    @apply bg-card/90 backdrop-blur-2xl border border-border/60;
+  }
+
+  .glow {
+    box-shadow: 0 0 20px hsl(var(--glow) / 0.3),
+                0 0 40px hsl(var(--glow) / 0.1);
+  }
+
+  .glow-sm {
+    box-shadow: 0 0 10px hsl(var(--glow) / 0.2),
+                0 0 20px hsl(var(--glow) / 0.05);
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent;
+  }
+
+  .gradient-bg {
+    background: linear-gradient(135deg, 
+      hsl(var(--background)) 0%, 
+      hsl(222 47% 8%) 50%, 
+      hsl(var(--background)) 100%);
+  }
+}
